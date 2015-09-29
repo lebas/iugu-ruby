@@ -162,5 +162,32 @@ module Iugu
         )
       )
     end
+
+
+    # POST /bank_verification
+    #
+    # Edit the bank info of an account
+    #
+    # @param [Hash] attributes the values to edit the bank info of an account
+    # @param [String] agency the number of the account's bank agency
+    # @param [String] account the number of the bank account
+    # @param [String] account_type the type of the account,
+    # possible values ['cc', 'cp']
+    # @param [String] bank the number of the account's bank,
+    #   possible values ['001','033','104','237', '341', '399']
+    # @param [File] document copy of a document to validate the bank info
+    # @param [Boolean] automatic_validation whether or not to automatically validate
+    # the account using the check digit
+
+    def self.bank_verification(attributes)
+      Iugu::Factory.create_from_response(
+        object_type,
+        APIRequest.request(
+          "POST",
+          "#{Iugu.base_uri}bank_verification",
+          attributes
+        )
+      )
+    end
   end
 end
