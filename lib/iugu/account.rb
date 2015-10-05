@@ -189,5 +189,24 @@ module Iugu
         )
       )
     end
+
+    # POST /web_hooks
+    #
+    # Add a web hook to an account
+    #
+    # @param [Hash] attributes the values to add the web hook
+    # @param [String] event the event that will trigger the web hook
+    # @param [String] url the url that will receive the POST
+
+    def self.web_hook(attributes)
+      Iugu::Factory.create_from_response(
+        object_type,
+        APIRequest.request(
+          "POST",
+          "#{Iugu.base_uri}web_hooks",
+          attributes
+        )
+      )
+    end
   end
 end
