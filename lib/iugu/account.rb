@@ -88,12 +88,12 @@ module Iugu
 
     # GET /accounts/:account_id
     #
-    # Searchs a account
+    # Fetches an account
     #
     # @param [String] account_id the account_id of an account
     # @param [String] user_token the user_token of an account
 
-    def self.search(account_id, user_token)
+    def self.fetch(account_id, user_token)
       Iugu::Factory.create_from_response(
         object_type,
         APIRequest.request(
@@ -108,14 +108,13 @@ module Iugu
     # Configures a account
     # POST /accounts/configuration
 
-    def self.configuration(attributes, api_token)
+    def self.configuration(attributes)
       Iugu::Factory.create_from_response(
         object_type,
         APIRequest.request(
           "POST",
           "#{url}/configuration",
-          attributes,
-          api_token
+          attributes
         )
       )
     end
@@ -205,6 +204,20 @@ module Iugu
           "POST",
           "#{Iugu.base_uri}web_hooks",
           attributes
+        )
+      )
+    end
+
+    # GET /web_hooks
+    #
+    # Fetches all web hooks of an account
+
+    def self.fetch_web_hooks
+      Iugu::Factory.create_from_response(
+        object_type,
+        APIRequest.request(
+          "GET",
+          "#{Iugu.base_uri}web_hooks"
         )
       )
     end
