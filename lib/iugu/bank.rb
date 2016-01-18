@@ -3,7 +3,7 @@ module Iugu
   	include Iugu::APIFetch
 
   	def self.withdrawals
-  		
+  		pry
   		Iugu::Factory.create_from_response(object_type, APIRequest.request("GET", "#{url}/v1/transfers"))
     end
   end
