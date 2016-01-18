@@ -17,6 +17,7 @@ require_relative "iugu/payment_token"
 require_relative "iugu/invoice"
 require_relative "iugu/subscription"
 require_relative "iugu/charge"
+require_relative "iugu/bank"
 require_relative "iugu/plan"
 
 module Iugu
