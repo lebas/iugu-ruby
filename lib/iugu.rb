@@ -19,6 +19,7 @@ require_relative "iugu/subscription"
 require_relative "iugu/charge"
 require_relative "iugu/bank"
 require_relative "iugu/plan"
+require_relative "iugu/account"
 
 module Iugu
   class AuthenticationException < StandardError
