@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'iugu/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "iugu_wwt"
+  spec.name          = "iugu"
   spec.version       = Iugu::VERSION
   spec.authors       = ["Eduardo Alencar"]
   spec.email         = ["lebas66@gmail.com"]
